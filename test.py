@@ -39,27 +39,32 @@ def main():
     #   1. jump right
     env = JoypadSpace(env, [["A"], ["left"], ["B"], ["right"], ["right", "A"], ["left", "A"], ["NOOP"]])
 
-    #env.reset()
-    #next_state, reward, done, trunc, info = env.step(action=0)
-    #print(f"{next_state.shape},\n {reward},\n {done},\n {info}")
+    env.reset()
+    next_state, reward, done, trunc, info = env.step(action=0)
+    print(f"{next_state.shape},\n {reward},\n {done},\n {info}")
 
     #import keyboard
 
-    from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
+    #from gym_super_mario_bros.actions import SIMPLE_MOVEMENT
     #env = JoypadSpace(env, [["A"], ["left"], ["B"], ["right"]])
 
+    # TODO: Start with Double Q-Learning
+    # TODO: Afterwards implement Dueling DQN
 
-    # Starten Sie den KeyboardListener im Hintergrund
-    #listener = keyboard.Listener(on_press=on_key_press)
-    #listener.start()
+    # TODO: output from environment
+    #(240, 256, 3),
+    #0.0,
+    #False,
+    #{'coins': 0, 'flag_get': False, 'life': 2, 'score': 0, 'stage': 1, 'status': 'small', 'time': 400, 'world': 1, 'x_pos': 40, 'y_pos': 79}
 
-    done = True
-
-    env.reset()
+    # TODO: Write a method for double q learning
+    double_q_learning()
 
     testRun(env)
 
 
+def double_q_learning():
+    pass
 
 
 # Test with key inputs
